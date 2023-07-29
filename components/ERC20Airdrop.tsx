@@ -128,8 +128,11 @@ export default function Airdrop20() {
     return (
         <div className={styles.container}>
             <div className={styles.inputContainer}>
+                <div className={styles.gradientText}>
+                    thirdweb
+                </div>
                 <h1 className={styles.airdropHeading}>ERC20 Airdrop</h1>
-                <label>Token Address:</label>
+                <h1 className={styles.inputHeader}>Token Address</h1>
                 <input
                     type="text"
                     placeholder="0x..."
@@ -139,7 +142,7 @@ export default function Airdrop20() {
                 />
             </div>
             <div className={styles.inputContainer}>
-                <label>Owner Address:</label>
+                <h1 className={styles.inputHeader}>Owner Address</h1>
                 <input
                     type="text"
                     placeholder="0x..."
@@ -149,22 +152,16 @@ export default function Airdrop20() {
                 />
             </div>
             {previewData && <PreviewComponent />}
-            <button className={styles.exampleCSV} onClick={downloadExampleCSV}>
-                Download Example CSV
-            </button>
-            <input
-                type="file"
-                accept=".csv"
-                onChange={handleFileChange}
-                style={{
-                    width: '90px',
-                    height: '32px',
-                    border: '1px solid #494949',
-                    borderRadius: '4px',
-                    padding: '4px',
-                    background: 'transparent',
-                }}
-            />
+            <div className={styles.uploadContainer}>
+                <div className={styles.uploadText}>
+                    CSV File Upload
+                </div>
+
+                <button className={styles.exampleCSV} onClick={downloadExampleCSV}>
+                    Download Example CSV
+                </button>
+            </div>
+      <input type="file" accept=".csv" onChange={handleFileChange} />
             <button className={styles.button} onClick={call} disabled={!csvFile || isLoading}>
                 Airdrop Tokens
             </button>

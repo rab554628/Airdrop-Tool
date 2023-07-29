@@ -130,8 +130,11 @@ export default function Airdrop721() {
   return (
     <div className={styles.container}>
       <div className={styles.inputContainer}>
-        <h1>ERC721 Airdrop</h1>
-        <label>Token Address:</label>
+        <div className={styles.gradientText}>
+          thirdweb
+        </div>
+        <h1 className={styles.airdropHeading}>ERC721 Airdrop</h1>
+        <h1 className={styles.inputHeader}>Token Address</h1>
         <input
           type="text"
           placeholder="0x..."
@@ -141,7 +144,7 @@ export default function Airdrop721() {
         />
       </div>
       <div className={styles.inputContainer}>
-        <label>Owner Address:</label>
+        <h1 className={styles.inputHeader}>Owner Address</h1>
         <input
           type="text"
           placeholder="0x..."
@@ -150,8 +153,17 @@ export default function Airdrop721() {
           className={styles.input}
         />
       </div>
-      <input type="file" accept=".csv" onChange={handleFileChange} />
       {previewData && <PreviewComponent />}
+      <div className={styles.uploadContainer}>
+        <div className={styles.uploadText}>
+          CSV File Upload
+        </div>
+
+        <button className={styles.exampleCSV} onClick={downloadExampleCSV}>
+          Download Example CSV
+        </button>
+      </div>
+      <input type="file" accept=".csv" onChange={handleFileChange} />
       <button className={styles.button} onClick={call} disabled={!csvFile || isLoading}>
         Airdrop Tokens
       </button>
@@ -169,9 +181,6 @@ export default function Airdrop721() {
           </ul>
         </div>
       )}
-      <button className={styles.exampleCSV} onClick={downloadExampleCSV}>
-        Download Example CSV
-      </button>
     </div>
   );
 }

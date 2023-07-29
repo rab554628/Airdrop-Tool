@@ -48,16 +48,37 @@
 }
 
 .exampleCSV {
-    padding: 10px 20px;
-    background-color: #3385ff00;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    background: transparent;
+    color: #3385FF; /* Text color as blue (#3385FF) */
+    border: none; /* Remove border */
+    border-radius: 4px;
+    padding: 8px 16px; /* Adjust padding as needed */
     cursor: pointer;
-    margin-top: 10px;
+    outline: none; /* Remove default focus outline */
 }
+
+.uploadContainer {
+    display: flex;
+    align-items: center;
+}
+
+.uploadText {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #F1F1F1;
+    background: transparent;
+    margin-right: 10px; /* Add margin for spacing between the text and the button */
+}
+
+
 
 .inputContainer {
     margin-bottom: 1rem;
@@ -116,6 +137,28 @@
 
 .airdropHeading {
     font-weight: 700;
+    font-size: 35px;
     color: #D9D9D9;
     width: 290px;
+    margin-top: 0%;
+}
+
+.inputHeader {
+    font-weight: 700;
+    font-size: 16px;
+    color: #F1F1F1;
+    width: 290px;
+    margin-top: 0%;
+}
+
+.gradientText {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    background: linear-gradient(90.35deg, #BA94D8 3.41%, #D62BBF 10.33%);
+    background-clip: text; /* Apply gradient to the text */
+    -webkit-background-clip: text; /* For Safari support */
+    color: transparent; /* Make the text transparent */
 }

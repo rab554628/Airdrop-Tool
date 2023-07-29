@@ -75,27 +75,27 @@ export default function Airdrop1155() {
     const recipients: string[] = [];
     const tokenIds: number[] = [];
     const amounts: number[] = [];
-  
+
     const lines = csvData.split("\n");
-  
+
     for (let i = 1; i < lines.length; i++) {
       const line = lines[i].trim();
       if (line.length === 0) continue;
-  
+
       const [recipient, tokenId, amount] = line.split(",");
-  
+
       recipients.push(recipient.trim());
       tokenIds.push(parseInt(tokenId.trim()));
       amounts.push(parseInt(amount.trim()));
     }
-  
+
     return { recipients, tokenIds, amounts };
   };
-  
+
 
   const PreviewComponent = () => {
     if (!previewData) return null;
-  
+
     return (
       <div className={styles.previewContainer}>
         <h3>Preview</h3>
@@ -120,7 +120,7 @@ export default function Airdrop1155() {
       </div>
     );
   };
-  
+
 
   const downloadExampleCSV = () => {
     const exampleCSVData = `recipient,tokenId,amount\n0x8449D665755d2b7900FC43000E768EA56eaCc604,3,10\n0x8449D665755d2b7900FC43000E768EA56eaCc604,5,10`;
@@ -137,8 +137,11 @@ export default function Airdrop1155() {
   return (
     <div className={styles.container}>
       <div className={styles.inputContainer}>
-        <h1>ERC1155 Airdrop</h1>
-        <label>Token Address:</label>
+        <div className={styles.gradientText}>
+          thirdweb
+        </div>
+        <h1 className={styles.airdropHeading}>ERC1155 Airdrop</h1>
+        <h1 className={styles.inputHeader}>Token Address</h1>
         <input
           type="text"
           placeholder="0x..."
@@ -148,7 +151,7 @@ export default function Airdrop1155() {
         />
       </div>
       <div className={styles.inputContainer}>
-        <label>Owner Address:</label>
+        <h1 className={styles.inputHeader}>Owner Address</h1>
         <input
           type="text"
           placeholder="0x..."
@@ -157,9 +160,18 @@ export default function Airdrop1155() {
           className={styles.input}
         />
       </div>
-      <input type="file" accept=".csv" onChange={handleFileChange} />
       {previewData && <PreviewComponent />}
-      <button className={styles.button} onClick={call} disabled={!csvFile || isLoading}>
+            <div className={styles.uploadContainer}>
+                <div className={styles.uploadText}>
+                    CSV File Upload
+                </div>
+
+                <button className={styles.exampleCSV} onClick={downloadExampleCSV}>
+                    Download Example CSV
+                </button>
+            </div>
+      <input type="file" accept=".csv" onChange={handleFileChange} />
+            <button className={styles.button} onClick={call} disabled={!csvFile || isLoading}>
         Airdrop Tokens
       </button>
       {isLoading && <p>Loading...</p>}
@@ -176,9 +188,6 @@ export default function Airdrop1155() {
           </ul>
         </div>
       )}
-      <button className={styles.exampleCSV} onClick={downloadExampleCSV}>
-        Download Example CSV
-      </button>
     </div>
   );
 }

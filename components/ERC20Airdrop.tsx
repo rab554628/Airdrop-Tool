@@ -128,10 +128,11 @@ export default function Airdrop20() {
     return (
         <div className={styles.container}>
             <div className={styles.inputContainer}>
-                <h1>ERC20 Airdrop</h1>
+                <h1 className={styles.airdropHeading}>ERC20 Airdrop</h1>
                 <label>Token Address:</label>
                 <input
                     type="text"
+                    placeholder="0x..."
                     value={tokenAddress}
                     onChange={(e) => setTokenAddress(e.target.value)}
                     className={styles.input}
@@ -141,13 +142,29 @@ export default function Airdrop20() {
                 <label>Owner Address:</label>
                 <input
                     type="text"
+                    placeholder="0x..."
                     value={ownerAddress}
                     onChange={(e) => setOwnerAddress(e.target.value)}
                     className={styles.input}
                 />
             </div>
-            <input type="file" accept=".csv" onChange={handleFileChange} />
             {previewData && <PreviewComponent />}
+            <button className={styles.exampleCSV} onClick={downloadExampleCSV}>
+                Download Example CSV
+            </button>
+            <input
+                type="file"
+                accept=".csv"
+                onChange={handleFileChange}
+                style={{
+                    width: '90px',
+                    height: '32px',
+                    border: '1px solid #494949',
+                    borderRadius: '4px',
+                    padding: '4px',
+                    background: 'transparent',
+                }}
+            />
             <button className={styles.button} onClick={call} disabled={!csvFile || isLoading}>
                 Airdrop Tokens
             </button>
@@ -165,9 +182,6 @@ export default function Airdrop20() {
                     </ul>
                 </div>
             )}
-            <button className={styles.exampleCSV} onClick={downloadExampleCSV}>
-                Download Example CSV
-            </button>
         </div>
     );
 }

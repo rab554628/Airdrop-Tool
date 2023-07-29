@@ -1,40 +1,30 @@
 .container {
     display: flex;
+    width: 468px;
+    height: 560px;
     flex-direction: column;
     align-items: center;
-    /* Card styling */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: opx 4px 8px #880ab7;
-    /* Initial box shadow set to none */
-    background-color: #ffffff;
-    /* Gradient glow effect */
-    background-image: linear-gradient(45deg, #0e0e0e, #000000, #242424);
-    filter: drop-shadow(0 4px 8px #880ab7(0, 0, 0, 0.1));
-    transition: box-shadow ease-in-out;
+    border-radius: 1px;
+    border: #ffffff;
+    border: 1px solid #323232;
+    background-color: #0E0E10;
 }
 
-/* On hover, apply the box shadow */
-.container:hover {
-    box-shadow: -6px 6px 20px 20px rgba(0, 0, 0, 0.2);
-    /* Intensified box shadow with wider spread */
-}
-.tab {
+/* .tab {
   display:block;
-  height: 35px;
-}
-.tabs {
+  height: 49px;
+} */
+/* .tabs {
   display: flex;
   background-color: transparent;
-}
+} */
 
 .active {
-    background-color: #f213a4;
-    width: 150px;
-    height: 35px;
+    background-color: #232429;
+    width: 95px;
+    height: 45px;
     border-width: 0px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
 }
 
 .content {
@@ -45,8 +35,10 @@
 
 .button {
     padding: 10px 20px;
-    background-color: #f213a4;
-    color: #ffffff;
+    width: 404px;
+    height: 52px;
+    background-color: #ffffff;
+    color: #0E0E10;
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -77,22 +69,22 @@
     margin-bottom: 0.5rem;
 }
 
-.inputContainerInput {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: #000000;
+.input {
+    background-color: #0E0E10;
+    border-radius: 12px;
+    border: 1px solid #323232;
+    padding: 8px;
+    width: 404px;
+    height: 56px;
 }
 
-.input {
-    background-color: #202425;
-    border-radius: 5px;
-    padding: 8px;
-    width: 500px;
+.input::placeholder {
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .button:disabled {
-    background-color: #f213a4;
+    background-color: #ffffff;
     cursor: not-allowed;
 }
 
@@ -121,3 +113,9 @@
 .previewTable tr:nth-child(even) {}
 
 .previewTable tr:hover {}
+
+.airdropHeading {
+    font-weight: 700;
+    color: #D9D9D9;
+    width: 290px;
+}

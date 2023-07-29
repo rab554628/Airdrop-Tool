@@ -134,6 +134,7 @@ export default function Airdrop721() {
         <label>Token Address:</label>
         <input
           type="text"
+          placeholder="0x..."
           value={tokenAddress}
           onChange={(e) => setTokenAddress(e.target.value)}
           className={styles.input}
@@ -143,6 +144,7 @@ export default function Airdrop721() {
         <label>Owner Address:</label>
         <input
           type="text"
+          placeholder="0x..."
           value={ownerAddress}
           onChange={(e) => setOwnerAddress(e.target.value)}
           className={styles.input}

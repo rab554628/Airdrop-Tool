@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import "../styles/globals.css";
-import { Pumbai } from "@thirdweb-dev/chains"
+import { Polygon } from "@thirdweb-dev/chains"
 import { Navbar } from "../components/Navbar/Navbar";
 
 

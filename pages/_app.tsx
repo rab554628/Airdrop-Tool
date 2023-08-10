@@ -7,7 +7,7 @@ import { Navbar } from "../components/Navbar/Navbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider activeChain={Mumbai}
+    <ThirdwebProvider activeChain={137}
       clientId={process.env.THIRDWEB_CLIENTID}
     >
       <Navbar />

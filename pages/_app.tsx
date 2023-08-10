@@ -5,10 +5,9 @@ import { Mumbai } from "@thirdweb-dev/chains"
 import { Navbar } from "../components/Navbar/Navbar";
 
 
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider activeChain={137}
+    <ThirdwebProvider activeChain={Polygon}
       clientId={process.env.THIRDWEB_CLIENTID}
     >
       <Navbar />
